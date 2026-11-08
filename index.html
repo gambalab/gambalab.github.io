@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gambardella Lab — AI for protein variants &amp; genomics | TIGEM, Naples</title>
+<meta name="description" content="Gennaro Gambardella's lab at TIGEM (Naples): AI and long-read genomics to interpret genetic variants in rare diseases — ESMRank, DREEP, GFICF, HONEY DeepVariant.">
+<meta property="og:title" content="Gambardella Lab — AI for protein variants &amp; genomics | TIGEM, Naples">
+<meta property="og:description" content="Gennaro Gambardella's lab at TIGEM (Naples): AI and long-read genomics to interpret genetic variants in rare diseases — ESMRank, DREEP, GFICF, HONEY DeepVariant.">
+<meta property="og:type" content="website">
+
+<link rel="canonical" href="https://gambalab.github.io/">
+<meta name="author" content="Gennaro Gambardella">
+<meta property="og:url" content="https://gambalab.github.io/">
+<meta property="og:site_name" content="Gambardella Lab">
+<meta property="og:image" content="https://gambalab.github.io/assets/social-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gambardella Lab — a DNA helix forming a tree, half nature, half code.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gambalab.github.io/assets/social-card.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://gambalab.github.io/#website",
+   "url": "https://gambalab.github.io/",
+   "name": "Gambardella Lab",
+   "publisher": {
+    "@id": "https://gambalab.github.io/#lab"
+   },
+   "inLanguage": "en"
+  },
+  {
+   "@type": "ResearchOrganization",
+   "@id": "https://gambalab.github.io/#lab",
+   "name": "Gambardella Lab",
+   "alternateName": "Computational Biology Lab, TIGEM",
+   "url": "https://gambalab.github.io/",
+   "logo": "https://gambalab.github.io/assets/social-card.jpg",
+   "description": "Computational biology lab at TIGEM and Scuola Superiore Meridionale developing AI and long-read genomics methods to interpret genetic variants in rare diseases and precision medicine.",
+   "parentOrganization": {
+    "@type": "ResearchOrganization",
+    "name": "Telethon Institute of Genetics and Medicine (TIGEM)",
+    "url": "https://www.tigem.it"
+   },
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pozzuoli (Naples)",
+    "addressCountry": "IT"
+   },
+   "founder": {
+    "@id": "https://gambalab.github.io/#gennaro-gambardella"
+   },
+   "sameAs": [
+    "https://github.com/gambalab"
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://gambalab.github.io/#gennaro-gambardella",
+   "name": "Gennaro Gambardella",
+   "jobTitle": "Principal Investigator",
+   "affiliation": [
+    {
+     "@type": "ResearchOrganization",
+     "name": "Telethon Institute of Genetics and Medicine (TIGEM)",
+     "url": "https://www.tigem.it"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "Scuola Superiore Meridionale",
+     "url": "https://www.ssmeridionale.it"
+    }
+   ],
+   "sameAs": [
+    "https://orcid.org/0000-0001-7517-1347",
+    "https://scholar.google.com/citations?user=VKKFfFwAAAAJ",
+    "https://github.com/gambalab",
+    "https://www.tigem.it/research/research-faculty/gambardella"
+   ],
+   "knowsAbout": [
+    "protein variant effect prediction",
+    "protein language models",
+    "deep mutational scanning",
+    "long-read sequencing",
+    "variant calling",
+    "single-cell genomics",
+    "rare genetic diseases",
+    "precision medicine"
+   ]
+  }
+ ]
+}
+</script>
+<meta name="theme-color" content="#141009">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;}
+  section{scroll-margin-top:78px;}
+  ::selection{background:#C2541F;color:#fff;}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @media (max-width:880px){
+    .nav-links{display:none !important;}
+    .menu-btn{display:inline-flex !important;}
+    .nav-links.open{display:flex !important;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0 !important;background:#FBF8F2;border-bottom:1px solid #E7DBC8;padding:8px 24px 18px !important;align-items:stretch !important;}
+    .nav-links.open a{padding:13px 0 !important;border-bottom:1px solid #EFE6D6;}
+    .nav-links.open a.cta{border:1px solid #E7DBC8 !important;margin-top:12px;text-align:center;border-radius:10px;}
+    .hero-b{background:#F4ECDC !important;min-height:auto !important;}
+    .hero-grid{grid-template-columns:1fr !important;gap:26px !important;padding:96px 20px 54px !important;min-height:auto !important;text-align:center;}
+    .hero-binary{display:none !important;}
+    .hero-corner{display:none !important;}
+    .hero-emblem{height:280px !important;justify-self:center;margin:0 auto;}
+    .hero-left{padding:0 !important;align-items:center !important;}
+    .hero-right{padding:26px !important;text-align:center !important;background:#161009 !important;border-radius:18px !important;align-items:center !important;}
+    .grid-2{grid-template-columns:1fr !important;}
+    .grid-3{grid-template-columns:1fr !important;}
+    .grid-tools{grid-template-columns:1fr 1fr !important;}
+    .pub-row{grid-template-columns:1fr !important;gap:6px !important;}
+    .pub-row .pub-ven{text-align:left !important;}
+    .contact-grid{grid-template-columns:1fr !important;gap:30px !important;}
+    .ethos-grid{grid-template-columns:1fr !important;gap:28px !important;}
+    .wrap{padding:0 20px !important;}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;}}
+</style>
+</head>
+<body>
+<div style="font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.6;color:#241A10;background:#F4ECDC;-webkit-font-smoothing:antialiased;">
+
+<!-- ===================== NAV ===================== -->
+<nav style="position:sticky;top:0;z-index:60;background:rgba(244,236,220,.85);backdrop-filter:saturate(150%) blur(12px);border-bottom:1px solid #E7DBC8;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="#top" style="display:flex;align-items:center;gap:11px;text-decoration:none;color:#241A10;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;letter-spacing:-0.01em;">
+      <span style="width:26px;height:26px;border-radius:7px;flex:none;background:linear-gradient(90deg,#C2541F 0 50%,#161009 50% 100%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);"></span>
+      Gambardella Lab
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" style="display:none;background:none;border:1px solid #E7DBC8;border-radius:9px;padding:8px 12px;font-size:14px;color:#241A10;cursor:pointer;font-family:inherit;">Menu</button>
+    <div class="nav-links" id="navLinks" style="display:flex;gap:28px;align-items:center;">
+      <a href="#vision" style="font-size:14.5px;color:#6E5F4B;text-decoration:none;">Vision</a>
+      <a href="#research" style="font-size:14.5px;color:#6E5F4B;text-decoration:none;">Research</a>
+      <a href="software.html" style="font-size:14.5px;color:#6E5F4B;text-decoration:none;">Software</a>
+      <a href="#papers" style="font-size:14.5px;color:#6E5F4B;text-decoration:none;">Papers</a>
+      <a href="#people" style="font-size:14.5px;color:#6E5F4B;text-decoration:none;">People</a>
+      <a href="#news" style="font-size:14.5px;color:#6E5F4B;text-decoration:none;">News</a>
+      <a class="cta" href="#join" style="font-size:14.5px;color:#C2541F;font-weight:500;text-decoration:none;border:1px solid #E7DBC8;padding:8px 16px;border-radius:9px;background:#FBF8F2;">Join us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO (Duality split) ===================== -->
+<header class="hero-b" id="top" style="position:relative;overflow:hidden;background:linear-gradient(90deg,#F4ECDC 0%,#F4ECDC 50%,#161009 50%,#1A1209 100%);">
+  <!-- texture: dots on nature side -->
+  <div style="position:absolute;top:0;left:0;width:50%;height:100%;background-image:radial-gradient(circle at 1px 1px, rgba(120,80,40,.06) 1px, transparent 0);background-size:24px 24px;pointer-events:none;"></div>
+  <!-- binary rain on tech side -->
+  <div class="hero-binary" style="position:absolute;top:0;right:0;width:50%;height:100%;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.85;letter-spacing:.18em;color:rgba(216,138,30,.13);padding:36px 44px;white-space:pre;overflow:hidden;text-align:right;user-select:none;pointer-events:none;">0   00111   010
+0110 11011 0101
+1101 01010 0100
+10010 10001 0101
+1111 10000 0110
+0100 11011 0110
+0011 01111 0110
+1001 00010 0101
+0110 10011 0101
+1011 00110 0110
+0100 10001 1011
+1110 11111 0100
+0   00111   010
+0110 11011 0101
+1101 01010 0100
+10010 10001 0101
+1111 10000 0110</div>
+
+  <div class="hero-corner" style="position:absolute;top:30px;left:54px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#A9824E;z-index:3;">Nature</div>
+  <div class="hero-corner" style="position:absolute;top:30px;right:54px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:rgba(216,138,30,.8);z-index:3;">Technology</div>
+
+  <div class="hero-grid" style="position:relative;max-width:1240px;margin:0 auto;min-height:94vh;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;padding:118px 28px 60px;z-index:2;">
+    <!-- left / nature -->
+    <div class="hero-left" style="display:flex;flex-direction:column;align-items:flex-start;padding-right:24px;align-self:end;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#A9824E;margin-bottom:18px;">TIGEM · SSM · Naples</div>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(40px,4.4vw,56px);letter-spacing:-0.03em;line-height:.96;margin:0;color:#241A10;">Gambardella<br/>Lab</h1>
+      <p style="margin:22px 0 0;font-size:18px;line-height:1.5;color:#6E5F4B;max-width:30ch;">The living grammar of proteins — variation, constraint, and function, read at proteome scale.</p>
+      <a href="#research" style="margin-top:30px;font-size:15px;font-weight:500;padding:13px 22px;border-radius:11px;background:#241A10;color:#FBF8F2;text-decoration:none;">See our research →</a>
+    </div>
+
+    <!-- center / emblem -->
+    <div style="display:flex;align-items:center;justify-content:center;padding:0 6px;align-self:center;">
+      <img class="hero-emblem" src="assets/emblem_motto.webp" alt="Gambardella Lab emblem: a DNA double helix forming the trunk of a tree — half bare winter branches, half autumn foliage — rooted in streams of binary code." style="height:min(82vh,720px);width:auto;filter:drop-shadow(0 24px 50px rgba(0,0,0,.34));animation:floaty 9s ease-in-out infinite;" />
+    </div>
+
+    <!-- right / technology -->
+    <div class="hero-right" style="display:flex;flex-direction:column;align-items:flex-end;text-align:right;padding-left:24px;align-self:end;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#D8821E;margin-bottom:18px;">AI · variant effects</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3vw,34px);letter-spacing:-0.02em;line-height:1.05;margin:0;color:#F6ECDC;">Reading the<br/>mutational language<br/>of proteins.</h2>
+      <p style="margin:20px 0 0;font-size:16px;line-height:1.55;color:#B7A88E;max-width:32ch;">AI models — including <span style="color:#E89B3A;font-weight:500;">ESMRank</span> — that turn billions of mutations into one transferable signal of constraint.</p>
+      <a href="software.html" style="margin-top:30px;font-size:15px;font-weight:500;padding:13px 22px;border-radius:11px;background:#D8821E;color:#1A1209;text-decoration:none;">Software &amp; code →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== VISION ===================== -->
+<section id="vision" style="background:linear-gradient(180deg,#FBF8F2,#F4ECDC);border-top:1px solid #EFE6D6;padding:84px 0;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C2541F;">Our vision</div>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;line-height:1.12;font-size:clamp(28px,3.8vw,42px);margin:14px 0 0;max-width:18ch;">Life's harmonious dance unfolds where nature and technology intertwine.</h2>
+    <p style="color:#6E5F4B;margin:20px 0 0;max-width:62ch;font-size:18px;">Like the tree of life — rooted in complexity, branching toward discovery — our research integrates DNA sequencing and artificial intelligence to reveal how genetic variation shapes human health. By turning binary code into biological insight, we work to accelerate diagnoses, guide therapies, and expand the promise of precision medicine.</p>
+
+    <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px;">
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">Roots</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:19px;margin:10px 0 7px;letter-spacing:-0.01em;">Rooted in biology</h3>
+        <p style="margin:0;color:#6E5F4B;font-size:15px;">Real sequencing data, real disease — from single cells to whole proteomes.</p>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">Trunk</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:19px;margin:10px 0 7px;letter-spacing:-0.01em;">Branching through AI</h3>
+        <p style="margin:0;color:#6E5F4B;font-size:15px;">Protein language models that read mutations the way evolution wrote them.</p>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">Canopy</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:19px;margin:10px 0 7px;letter-spacing:-0.01em;">Toward precision medicine</h3>
+        <p style="margin:0;color:#6E5F4B;font-size:15px;">Turning constraint into interpretation — diagnoses, therapies, better proteins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESEARCH ===================== -->
+<section id="research" style="background:#F4ECDC;border-top:1px solid #EFE6D6;padding:84px 0;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="max-width:42ch;margin-bottom:42px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C2541F;">Research</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;line-height:1.1;font-size:clamp(26px,3.4vw,38px);margin:12px 0 0;">From sequence to mechanism, at scale.</h2>
+      <p style="color:#6E5F4B;margin:14px 0 0;font-size:17px;">Self-supervised protein models give us a score for every possible mutation. Our work makes those scores transferable, interpretable, and tied to real biology.</p>
+    </div>
+    <div class="grid-2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;">
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:26px 26px 28px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">01</span>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:12px 0 8px;letter-spacing:-0.01em;">Variant effect prediction</h3>
+        <p style="margin:0;color:#6E5F4B;font-size:15.5px;">Language-model scores for all ~450M possible human missense variants — no homologs, no clinical labels required.</p>
+        <div style="margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B6A88E;letter-spacing:.04em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">M K T A Y I A K Q R Q I S F V K S H F S R Q L E E R</div>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:26px 26px 28px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">02</span>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:12px 0 8px;letter-spacing:-0.01em;">Mutational constraint from MAVEs</h3>
+        <p style="margin:0;color:#6E5F4B;font-size:15.5px;">ESMRank reconciles ~1,100 overlapping deep mutational scans (&gt;2M variants) into one transferable axis of constraint — <em>variant soundness</em>.</p>
+        <div style="margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B6A88E;letter-spacing:.04em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">∿ assay A · assay B · overlap → ordinal rank → constraint</div>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:26px 26px 28px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">03</span>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:12px 0 8px;letter-spacing:-0.01em;">AI for protein engineering</h3>
+        <p style="margin:0;color:#6E5F4B;font-size:15.5px;">Ranking and designing sequence variants for stability, fitness and function with protein foundation models — and generative models that build new protein 3D structures.</p>
+        <div style="margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B6A88E;letter-spacing:.04em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">wt → mutant · ΔΔG · fitness · pLLR · selection</div>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:26px 26px 28px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">04</span>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:12px 0 8px;letter-spacing:-0.01em;">From variants to diagnosis and therapy</h3>
+        <p style="margin:0;color:#6E5F4B;font-size:15.5px;">Finding variants with hybrid long/short-read sequencing, interpreting them with AI, and linking them to folding, function and therapeutic rescue — from CFTR in cystic fibrosis to inherited retinal disease.</p>
+        <div style="margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B6A88E;letter-spacing:.04em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">variant calling · interpretation · CFTR · retina · rescue</div>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:26px 26px 28px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">05</span>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:12px 0 8px;letter-spacing:-0.01em;">Haplotypes for allele-specific therapy</h3>
+        <p style="margin:0;color:#6E5F4B;font-size:15.5px;">Targeted long-read sequencing and phasing in KIF1A-associated neurological disorder, to tell which patients carry an allele configuration compatible with allele-specific antisense therapy — and to find new SNPs that could extend it to more patients. In collaboration with, and with thanks to, <a href="https://kif1a.it/" target="_blank" rel="noopener" style="color:#C2541F;text-decoration:none;border-bottom:1px solid rgba(194,84,31,.35);">KIF1A Italia</a>.</p>
+        <div style="margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B6A88E;letter-spacing:.04em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">adaptive sampling · DeepVariant · phasing · cis / trans · ASO</div>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:26px 26px 28px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">06</span>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:12px 0 8px;letter-spacing:-0.01em;">Genome-editing outcomes, molecule by molecule</h3>
+        <p style="margin:0;color:#6E5F4B;font-size:15.5px;">Long reads and a dedicated pipeline to reconstruct what therapeutic genome editing actually wrote into the genome: where the donor DNA integrated, in which orientation, whether it is complete, and how often — a structural safety check for gene therapy.</p>
+        <div style="margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B6A88E;letter-spacing:.04em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">HITI · AAV · junctions · orientation · genome integrity</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOFTWARE / DATA (dark = technology) ===================== -->
+<section id="software" style="background:#141009;color:#EFE2CD;padding:88px 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(216,138,30,.06) 1px, transparent 0);background-size:26px 26px;pointer-events:none;"></div>
+  <div class="wrap" style="position:relative;max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="max-width:46ch;margin-bottom:40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#D8821E;">Methods &amp; software</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;line-height:1.1;font-size:clamp(26px,3.4vw,38px);margin:12px 0 0;color:#F6ECDC;">Open tools, built for real data.</h2>
+      <p style="color:#A8997F;margin:14px 0 0;font-size:17px;">Everything we publish ships with code. Below: a live read of the mutational landscape our models score, and the tools behind our work — each with install notes and citation on the Software page.</p>
+    </div>
+
+    <!-- live heatmap panel -->
+    <div style="background:#1C1610;border:1px solid #332818;border-radius:16px;padding:18px 18px 14px;margin-bottom:28px;box-shadow:0 30px 60px -40px rgba(0,0,0,.7);">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#A8997F;">Mutational landscape</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#D8821E;">20 aa × position</span>
+      </div>
+      <div style="position:relative;">
+        <canvas id="heat" width="900" height="430" style="width:100%;display:block;border-radius:8px;"></canvas>
+        <div id="tip" style="position:absolute;pointer-events:none;opacity:0;transition:opacity .12s;background:#F6ECDC;color:#1A1209;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 8px;border-radius:6px;white-space:nowrap;z-index:5;"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:9px;margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#A8997F;">
+        <span>tolerated</span>
+        <span style="height:7px;flex:1;border-radius:4px;background:linear-gradient(90deg,#2F6FE0,#1C1610 50%,#E0492F);"></span>
+        <span>constrained</span>
+      </div>
+    </div>
+
+    <!-- ESMRank flagship -->
+    <div style="background:linear-gradient(180deg,rgba(216,138,30,.12),#1C1610 70%);border:1px solid #4A3A1E;border-radius:16px;padding:28px 30px;margin-bottom:18px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:22px;color:#F6ECDC;">ESMRank</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#A8997F;border:1px solid #4A3A1E;border-radius:6px;padding:4px 9px;">Mol Syst Biol · 2026</span>
+      </div>
+      <p style="margin:14px 0 0;color:#C9BBA1;font-size:16px;max-width:70ch;">A learning-to-rank predictor of missense variant effects, trained on ~1,100 overlapping deep mutational scans fused into one consensus score — <em>variant soundness</em>. ESM2 embeddings plus physicochemical features; tracks ClinVar pathogenicity and CFTR folding, activity and drug response.</p>
+      <div style="display:flex;gap:18px;margin-top:18px;font-size:14px;">
+        <a href="https://doi.org/10.1038/s44320-026-00252-3" target="_blank" rel="noopener" style="color:#E89B3A;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(232,155,58,.4);">Read the paper →</a>
+        <a href="https://github.com/gambalab/ESMRank" target="_blank" rel="noopener" style="color:#E89B3A;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(232,155,58,.4);">Code →</a>
+        <a href="software.html#esmrank" style="color:#E89B3A;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(232,155,58,.4);">Install &amp; cite →</a>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;">
+        <a href="https://www.embl.org/about/info/course-and-conference-office/2026/03/best-poster-prize-at-ai-and-biology/" target="_blank" rel="noopener" style="color:#F6ECDC;text-decoration:none;border:1px solid #4A3A1E;border-radius:999px;padding:5px 11px;">★ Best poster · EMBO | EMBL AI and biology 2026</a>
+        <a href="https://www.youtube.com/watch?v=uYJYTnlMvH8" target="_blank" rel="noopener" style="color:#F6ECDC;text-decoration:none;border:1px solid #4A3A1E;border-radius:999px;padding:5px 11px;">★ Best talk · ISCB-UK 2026, Cambridge — watch ▶</a>
+      </div>
+    </div>
+
+    <!-- compact tool strip → Software page -->
+    <div class="grid-tools" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;">
+      <a href="software.html#dreep" style="background:#1C1610;border:1px solid #332818;border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;text-decoration:none;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;color:#F6ECDC;">DREEP</span><span style="color:#A8997F;font-size:14px;line-height:1.45;">Single-cell drug response.</span></a>
+      <a href="software.html#gficf" style="background:#1C1610;border:1px solid #332818;border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;text-decoration:none;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;color:#F6ECDC;">GFICF</span><span style="color:#A8997F;font-size:14px;line-height:1.45;">Single-cell normalisation, pathways &amp; mapping.</span></a>
+      <a href="software.html#honey" style="background:#1C1610;border:1px solid #332818;border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;text-decoration:none;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;color:#F6ECDC;">HONEY DeepVariant</span><span style="color:#A8997F;font-size:14px;line-height:1.45;">Hybrid long + short-read variant calling.</span></a>
+      <a href="software.html#sparsedist" style="background:#1C1610;border:1px solid #332818;border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;text-decoration:none;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;color:#F6ECDC;">sparseDist <span style="font-size:10.5px;color:#1A1209;background:#E89B3A;border-radius:5px;padding:2px 6px;vertical-align:middle;">new</span></span><span style="color:#A8997F;font-size:14px;line-height:1.45;">Fast kNN &amp; graphs for sparse data.</span></a>
+    </div>
+    <div style="margin-top:26px;">
+      <a href="software.html" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:500;padding:12px 20px;border-radius:11px;background:#D8821E;color:#1A1209;text-decoration:none;">All software, install &amp; citations →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PAPERS ===================== -->
+<section id="papers" style="background:#F4ECDC;padding:84px 0;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="margin-bottom:38px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C2541F;">Selected papers</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;font-size:clamp(26px,3.4vw,38px);margin:12px 0 0;">Recent work.</h2>
+    </div>
+    <div>
+      <div class="pub-row" style="display:grid;grid-template-columns:88px 1fr auto;gap:22px;align-items:baseline;padding:22px 0;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#C2541F;">2026</span>
+        <a href="https://doi.org/10.1038/s44320-026-00252-3" target="_blank" rel="noopener" style="font-size:17px;font-weight:500;line-height:1.4;color:#241A10;text-decoration:none;">ESMRank: learning-to-rank prediction of missense variant effects from deep mutational scanning data<span style="display:block;color:#6E5F4B;font-size:14px;margin-top:5px;font-weight:400;">R. Arnese, G. Gambardella</span></a>
+        <span class="pub-ven" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A7A66;text-align:right;white-space:nowrap;">Molecular Systems Biology</span>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:88px 1fr auto;gap:22px;align-items:baseline;padding:22px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#C2541F;">2026</span>
+        <a href="https://doi.org/10.1038/s41467-026-77709-4" target="_blank" rel="noopener" style="font-size:17px;font-weight:500;line-height:1.4;color:#241A10;text-decoration:none;">Genotype-phenotype single-cell transcriptomics for massive parallel assessment of genetic variants<span style="display:block;color:#6E5F4B;font-size:14px;margin-top:5px;font-weight:400;">L. Vaccaro, R. De Santis, … G. Gambardella, R. Arnese, … D. Cacchiarelli</span></a>
+        <span class="pub-ven" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A7A66;text-align:right;white-space:nowrap;">Nature Communications</span>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:88px 1fr auto;gap:22px;align-items:baseline;padding:22px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#C2541F;">2026</span>
+        <a href="https://doi.org/10.1016/j.xcrm.2026.103047" target="_blank" rel="noopener" style="font-size:17px;font-weight:500;line-height:1.4;color:#241A10;text-decoration:none;">Targeted insertion of an optimized donor DNA is effective in a humanized mouse model of dominant retinitis pigmentosa<span style="display:block;color:#6E5F4B;font-size:14px;margin-top:5px;font-weight:400;">F. Esposito, A. Padmanabhan, M. Rhiel, … X. Bujanda Cundin, S. Pellecchia, … G. Gambardella, T. Cathomen, A. Auricchio</span></a>
+        <span class="pub-ven" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A7A66;text-align:right;white-space:nowrap;">Cell Reports Medicine</span>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:88px 1fr auto;gap:22px;align-items:baseline;padding:22px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#C2541F;">2025</span>
+        <a href="https://doi.org/10.1016/j.crmeth.2025.101107" target="_blank" rel="noopener" style="font-size:17px;font-weight:500;line-height:1.4;color:#241A10;text-decoration:none;">Joint processing of long- and short-read sequencing data with deep learning improves variant calling<span style="display:block;color:#6E5F4B;font-size:14px;margin-top:5px;font-weight:400;">G. Gambardella</span></a>
+        <span class="pub-ven" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A7A66;text-align:right;white-space:nowrap;">Cell Reports Methods</span>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:88px 1fr auto;gap:22px;align-items:baseline;padding:22px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#C2541F;">2024</span>
+        <span style="font-size:17px;font-weight:500;line-height:1.4;color:#241A10;">Single-cell lineage tracing reveals clonal dynamics of anti-EGFR therapy resistance in triple-negative breast cancer<span style="display:block;color:#6E5F4B;font-size:14px;margin-top:5px;font-weight:400;">S. Pellecchia, M. Franchini, G. Viscido, G. Gambardella, et al.</span></span>
+        <span class="pub-ven" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A7A66;text-align:right;white-space:nowrap;">Genome Medicine</span>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:88px 1fr auto;gap:22px;align-items:baseline;padding:22px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#C2541F;">2023</span>
+        <a href="https://doi.org/10.1186/s12916-023-03182-1" target="_blank" rel="noopener" style="font-size:17px;font-weight:500;line-height:1.4;color:#241A10;text-decoration:none;">Predicting drug response from single-cell expression profiles of tumours<span style="display:block;color:#6E5F4B;font-size:14px;margin-top:5px;font-weight:400;">S. Pellecchia, G. Viscido, M. Franchini, G. Gambardella</span></a>
+        <span class="pub-ven" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A7A66;text-align:right;white-space:nowrap;">BMC Medicine</span>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:88px 1fr auto;gap:22px;align-items:baseline;padding:22px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#C2541F;">2023</span>
+        <a href="https://doi.org/10.1093/nargab/lqad024" target="_blank" rel="noopener" style="font-size:17px;font-weight:500;line-height:1.4;color:#241A10;text-decoration:none;">Single-cell gene set enrichment analysis and transfer learning for functional annotation of scRNA-seq data<span style="display:block;color:#6E5F4B;font-size:14px;margin-top:5px;font-weight:400;">M. Franchini, S. Pellecchia, G. Viscido, G. Gambardella</span></a>
+        <span class="pub-ven" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A7A66;text-align:right;white-space:nowrap;">NAR Genom Bioinform</span>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:88px 1fr auto;gap:22px;align-items:baseline;padding:22px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#C2541F;">2022</span>
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8971486/" target="_blank" rel="noopener" style="font-size:17px;font-weight:500;line-height:1.4;color:#241A10;text-decoration:none;">A single-cell analysis of breast cancer cell lines to study tumour heterogeneity and drug response<span style="display:block;color:#6E5F4B;font-size:14px;margin-top:5px;font-weight:400;">G. Gambardella, G. Viscido, B. Tumaini, A. Isacchi, R. Bosotti, D. di Bernardo</span></a>
+        <span class="pub-ven" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A7A66;text-align:right;white-space:nowrap;">Nature Communications</span>
+      </div>
+    </div>
+    <div style="margin-top:28px;">
+      <a href="https://scholar.google.it/citations?user=VKKFfFwAAAAJ" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:500;padding:11px 19px;border-radius:10px;border:1px solid #E7DBC8;background:#FBF8F2;color:#241A10;text-decoration:none;">Full list on Google Scholar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PEOPLE ===================== -->
+<section id="people" style="background:linear-gradient(180deg,#F4ECDC,#FBF8F2);border-top:1px solid #EFE6D6;padding:84px 0;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="max-width:46ch;margin-bottom:40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C2541F;">People</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;font-size:clamp(26px,3.4vw,38px);margin:12px 0 0;">The lab.</h2>
+      <p style="color:#6E5F4B;margin:14px 0 0;font-size:17px;">A small group of computer scientists and biologists working across machine learning, genomics and protein science.</p>
+    </div>
+    <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:24px;">
+        <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#C2541F,#6B3A1E);color:#FBF8F2;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:14px;">GG</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0;">Gennaro Gambardella</h3>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;margin-top:5px;">Principal Investigator</div>
+        <p style="color:#6E5F4B;font-size:14px;margin:10px 0 0;">PI at TIGEM and tenure-track Assistant Professor at Scuola Superiore Meridionale. Works at the interface of AI, genomics and protein biology. Editorial Board member, <em>Scientific Data</em>. From January 2027, Head of the TIGEM Bioinformatics Core.</p>
+        <p style="color:#6E5F4B;font-family:'IBM Plex Mono',monospace;font-size:11.5px;margin:10px 0 0;line-height:1.6;">PhD TIGEM / Univ. Naples → IEO Milan → King's College London → TIGEM PI · SSM</p>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:24px;">
+        <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#D8821E,#C2541F);color:#FBF8F2;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:14px;">RA</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0;">Riccardo Arnese</h3>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;margin-top:5px;">PhD Student</div>
+        <p style="color:#6E5F4B;font-size:14px;margin:10px 0 0;">PhD in Computational and Quantitative Biology, University of Naples. Lead author on ESMRank — best poster at EMBO | EMBL "AI and biology" and best talk at ISCB-UK, both 2026.</p>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:24px;">
+        <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#E89B3A,#C2541F);color:#FBF8F2;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:14px;">HP</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0;">Harsh Poddar</h3>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;margin-top:5px;">Research Fellow</div>
+        <p style="color:#6E5F4B;font-size:14px;margin:10px 0 0;">Long-read haplotype phasing in KIF1A-associated neurological disorder, to match patients with allele-specific antisense therapies.</p>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:24px;">
+        <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#B5762C,#6B3A1E);color:#FBF8F2;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:14px;">AD</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0;">Antonio De Francesco</h3>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;margin-top:5px;">Research Fellow</div>
+        <p style="color:#6E5F4B;font-size:14px;margin:10px 0 0;">Genome integrity after gene editing: long-read reconstruction of where and how therapeutic DNA integrates.</p>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:24px;">
+        <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#9AA13C,#6B7A2E);color:#FBF8F2;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:14px;">GP</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0;">Giovanni Plazzotta</h3>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;margin-top:5px;">PhD Student · SEMM</div>
+        <p style="color:#6E5F4B;font-size:14px;margin:10px 0 0;">PhD in Systems Medicine (SEMM), second year. Generative models of protein 3D structures: flow matching that starts from homology-informed source structures.</p>
+      </div>
+    </div>
+
+    <div style="margin:44px 0 18px;padding-top:26px;border-top:1px solid #EFE6D6;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C2541F;">Alumni</span></div>
+    <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+      <div style="background:transparent;border:1px solid #E7DBC8;border-radius:14px;padding:24px;">
+        <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#C2A57F,#9C8B72);color:#FBF8F2;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:14px;">GV</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0;">Gaetano Viscido</h3>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;margin-top:5px;">Postdoc → Columbia</div>
+        <p style="color:#6E5F4B;font-size:14px;margin:10px 0 0;">Now postdoctoral researcher in the Califano Lab, Columbia University.</p>
+      </div>
+      <div style="background:transparent;border:1px solid #E7DBC8;border-radius:14px;padding:24px;">
+        <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#C2A57F,#9C8B72);color:#FBF8F2;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:14px;">MF</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0;">Melania Franchini</h3>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;margin-top:5px;">Postdoc → Columbia</div>
+        <p style="color:#6E5F4B;font-size:14px;margin:10px 0 0;">Now postdoctoral researcher in the Califano Lab, Columbia University.</p>
+      </div>
+      <div style="background:transparent;border:1px solid #E7DBC8;border-radius:14px;padding:24px;">
+        <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#C2A57F,#9C8B72);color:#FBF8F2;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:14px;">SP</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0;">Simona Pellecchia</h3>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;margin-top:5px;">Former Postdoc</div>
+        <p style="color:#6E5F4B;font-size:14px;margin:10px 0 0;">Single-cell genomics and tumour heterogeneity; lead author of the anti-EGFR lineage-tracing study (Genome Medicine, 2024).</p>
+      </div>
+      <div style="background:transparent;border:1px solid #E7DBC8;border-radius:14px;padding:24px;">
+        <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#C2A57F,#9C8B72);color:#FBF8F2;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:14px;">XB</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0;">Xabier Bujanda Cundín</h3>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;margin-top:5px;">Alumnus → PhD, Pamplona</div>
+        <p style="color:#6E5F4B;font-size:14px;margin:10px 0 0;">Now a PhD student at the University of Pamplona. Co-author of the retinitis pigmentosa gene-insertion study (Cell Reports Medicine, 2026).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== NEWS ===================== -->
+<section id="news" style="background:#FBF8F2;border-top:1px solid #EFE6D6;padding:84px 0;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="margin-bottom:36px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C2541F;">News &amp; updates</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;font-size:clamp(26px,3.4vw,38px);margin:12px 0 0;">What's happening in the lab.</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;">
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">Jan 2027</span>
+        <div><span style="font-size:16.5px;font-weight:500;">Gennaro Gambardella to lead the TIGEM Bioinformatics Core</span><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">From January 2027 the lab's PI becomes Head of the institute's Bioinformatics Core, which supports data analysis, sequencing, protein modelling and computing across TIGEM.</span></div>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">Oct 2026</span>
+        <div><a href="https://doi.org/10.1038/s44320-026-00252-3" target="_blank" rel="noopener" style="font-size:16.5px;font-weight:500;color:#241A10;text-decoration:none;">ESMRank published in Molecular Systems Biology</a><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">Learning-to-rank prediction of missense variant effects from deep mutational scanning data — open access, code on GitHub.</span></div>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">Oct 2026</span>
+        <div><a href="https://doi.org/10.1038/s41467-026-77709-4" target="_blank" rel="noopener" style="font-size:16.5px;font-weight:500;color:#241A10;text-decoration:none;">SCRAMseq out in Nature Communications</a><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">With the Cacchiarelli lab: single-cell transcriptomics linked to genotype tests ~2,200 TP63 missense variants in parallel.</span></div>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">Oct 2026</span>
+        <div><a href="https://kif1a.it/simposio-internazionale-2026/" target="_blank" rel="noopener" style="font-size:16.5px;font-weight:500;color:#241A10;text-decoration:none;">Talk at the 1st International Symposium on KIF1A Disorders, Pisa</a><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">"KIF1A and long-read NGS" at the first European meeting on KAND (IRCCS Stella Maris, 2–3 October), organised by KIF1A Italia: haplotype analysis to find which patients could be eligible for allele-specific antisense therapy.</span></div>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">Sep 2026</span>
+        <div><a href="https://doi.org/10.1016/j.xcrm.2026.103047" target="_blank" rel="noopener" style="font-size:16.5px;font-weight:500;color:#241A10;text-decoration:none;">Gene-insertion therapy for retinitis pigmentosa in Cell Reports Medicine</a><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">With the Auricchio lab: a mutation-agnostic AAV-HITI approach that inserts a therapeutic donor at the RHO locus improves retinal structure and function in a humanized model of dominant retinitis pigmentosa.</span></div>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">Jun 2026</span>
+        <div><span style="font-size:16.5px;font-weight:500;">Oral talk at SBHD 2026, Boston</span><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">"ESMRank: Learning-to-Rank Prediction of Protein Variant Effects from Integrated Mutational Landscapes" at the 18th International Conference on Systems Biology of Human Disease.</span></div>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">May 2026</span>
+        <div><a href="https://www.galileofestival.it/relatori/gennaro-gambardella/" target="_blank" rel="noopener" style="font-size:16.5px;font-weight:500;color:#241A10;text-decoration:none;">Panel at Galileo Festival, Padova</a><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">"Cellule, dati e algoritmi: un dialogo necessario" — with Laura Cancedda (IIT), 9 May.</span></div>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">Apr 2026</span>
+        <div><a href="https://www.youtube.com/watch?v=uYJYTnlMvH8" target="_blank" rel="noopener" style="font-size:16.5px;font-weight:500;color:#241A10;text-decoration:none;">Best talk award at ISCB-UK 2026, Cambridge ▶</a><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">Riccardo Arnese's ESMRank talk at Robinson College wins best talk — the recording is on YouTube.</span></div>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">Mar 2026</span>
+        <div><a href="https://www.embl.org/about/info/course-and-conference-office/2026/03/best-poster-prize-at-ai-and-biology/" target="_blank" rel="noopener" style="font-size:16.5px;font-weight:500;color:#241A10;text-decoration:none;">Best poster prize at EMBO | EMBL "AI and biology"</a><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">Riccardo Arnese wins the single poster prize of the symposium at EMBL Heidelberg with ESMRank.</span></div>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">Feb 2026</span>
+        <div><span style="font-size:16.5px;font-weight:500;">ESMRank preprint posted to bioRxiv</span><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">A transferable axis of protein mutational constraint, learned from ~1,100 overlapping deep mutational scans.</span></div>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">Sep 2025</span>
+        <div><span style="font-size:16.5px;font-weight:500;">Talk at Trieste Next</span><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">"Cellule, dati, algoritmi: la nuova frontiera della ricerca biomedica."</span></div>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">2024</span>
+        <div><span style="font-size:16.5px;font-weight:500;">Lineage-tracing study out in Genome Medicine</span><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">Clonal dynamics of anti-EGFR therapy resistance in triple-negative breast cancer.</span></div>
+      </div>
+      <div class="pub-row" style="display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:baseline;padding:20px 0;border-top:1px solid #EFE6D6;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C2541F;">2024</span>
+        <div><span style="font-size:16.5px;font-weight:500;">Alumni head to Columbia</span><span style="display:block;color:#6E5F4B;font-size:14.5px;margin-top:4px;">Gaetano Viscido and Melania Franchini join the Califano Lab at Columbia University.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== JOIN / CONTACT ===================== -->
+<section id="join" style="background:linear-gradient(180deg,#F4ECDC,#EFE5D1);border-top:1px solid #EFE6D6;padding:84px 0;">
+  <div class="wrap contact-grid" style="max-width:1180px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start;">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C2541F;">Join us · collaborate</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;font-size:clamp(28px,3.6vw,40px);margin:12px 0 0;">Working on AI for proteins? Let's talk.</h2>
+      <p style="color:#6E5F4B;margin:16px 0 0;font-size:17px;max-width:48ch;">We welcome motivated students and postdocs in machine learning, computational biology and protein science — and collaborations on variant interpretation and protein engineering. Reach out with a short note on what you'd like to work on.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px;">
+      <a id="mail" href="#" style="display:flex;justify-content:space-between;align-items:center;padding:15px 2px;border-top:1px solid #EFE6D6;font-size:15px;text-decoration:none;color:#241A10;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A7A66;letter-spacing:.08em;text-transform:uppercase;">Email</span><span id="mailv" style="color:#C2541F;font-weight:500;">click to reveal →</span></a>
+      <a href="https://github.com/gambalab" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:center;padding:15px 2px;border-top:1px solid #EFE6D6;font-size:15px;text-decoration:none;color:#241A10;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A7A66;letter-spacing:.08em;text-transform:uppercase;">GitHub</span><span style="color:#C2541F;font-weight:500;">@gambalab →</span></a>
+      <a href="https://scholar.google.it/citations?user=VKKFfFwAAAAJ" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:center;padding:15px 2px;border-top:1px solid #EFE6D6;font-size:15px;text-decoration:none;color:#241A10;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A7A66;letter-spacing:.08em;text-transform:uppercase;">Scholar</span><span style="color:#C2541F;font-weight:500;">Publications →</span></a>
+      <a href="https://www.tigem.it/research/research-faculty/gambardella" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:center;padding:15px 2px;border-top:1px solid #EFE6D6;font-size:15px;text-decoration:none;color:#241A10;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A7A66;letter-spacing:.08em;text-transform:uppercase;">TIGEM</span><span style="color:#C2541F;font-weight:500;">Faculty page →</span></a>
+      <span style="display:flex;justify-content:space-between;align-items:center;padding:15px 2px;border-top:1px solid #EFE6D6;font-size:15px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A7A66;letter-spacing:.08em;text-transform:uppercase;">Where</span><span style="color:#6E5F4B;">TIGEM, Pozzuoli (Naples), Italy</span></span>
+    </div>
+  </div>
+  <div class="wrap" style="max-width:1180px;margin:44px auto 0;padding:0 28px;">
+    <div style="border-top:1px solid #E2D4BC;padding-top:22px;display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#6E5F4B;">Supported by</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:15.5px;color:#4F4234;">Fondazione Telethon</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:15.5px;color:#4F4234;">AIRC</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:15.5px;color:#4F4234;">PNRR · D³-4-Health</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:15.5px;color:#4F4234;">Fondazione Umberto Veronesi</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer style="background:#141009;color:#A8997F;padding:34px 0 44px;font-size:13.5px;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center;">
+    <span style="display:flex;align-items:center;gap:10px;"><span style="width:18px;height:18px;border-radius:5px;background:linear-gradient(90deg,#C2541F 0 50%,#0c0905 50% 100%);"></span>© <span id="yr"></span> Gambardella Lab — TIGEM &amp; Scuola Superiore Meridionale, Naples.</span>
+    <span style="font-family:'IBM Plex Mono',monospace;color:#6E5F4B;">Built for github.com/gambalab</span>
+  </div>
+</footer>
+
+</div>
+<script>
+class DCLogic {}
+class Component extends DCLogic {
+  componentDidMount() {
+    // year
+    const yr = document.getElementById('yr');
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    // mobile menu
+    const mb = document.getElementById('menuBtn');
+    const nl = document.getElementById('navLinks');
+    if (mb && nl) {
+      mb.addEventListener('click', () => nl.classList.toggle('open'));
+      nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nl.classList.remove('open')));
+    }
+
+    // scrape-resistant email
+    (function () {
+      const u = 'gambardella', d = 'tigem' + '.' + 'it';
+      const a = document.getElementById('mail'), v = document.getElementById('mailv');
+      if (!a || !v) return;
+      let shown = false;
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const addr = u + '@' + d;
+        if (!shown) { v.textContent = addr; a.setAttribute('href', 'mailto:' + addr); shown = true; }
+        else window.location.href = 'mailto:' + addr;
+      });
+    })();
+
+    this.initHeat();
+  }
+
+  initHeat() {
+    const canvas = document.getElementById('heat');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const tip = document.getElementById('tip');
+    const AA = "ACDEFGHIKLMNPQRSTVWY".split("");
+    const ROWS = AA.length;
+    const COLS = 56;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function field(r, c) {
+      const base = 0.55 * Math.sin(c * 0.34) + 0.30 * Math.sin(c * 0.11 + 1.7) + 0.22 * Math.sin(c * 0.83 + 0.4);
+      const aa = Math.sin((r + 1) * 1.3 + c * 0.07) * 0.45 + Math.cos(r * 0.9 - c * 0.05) * 0.2;
+      let v = base * 0.8 + aa * 0.6;
+      return Math.max(-1, Math.min(1, v));
+    }
+    const TOL = [47, 111, 224], MID = [28, 22, 14], CON = [224, 73, 47];
+    function lerp(a, b, t) { return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t]; }
+    function colour(v) {
+      let c = v < 0 ? lerp(TOL, MID, (v + 1)) : lerp(MID, CON, v);
+      return `rgb(${c[0] | 0},${c[1] | 0},${c[2] | 0})`;
+    }
+
+    let cw, ch, padL = 22, padT = 4, cellW, cellH, revealed = 0, raf;
+    function layout() {
+      const cssW = canvas.clientWidth || 900;
+      const ratio = window.devicePixelRatio || 1;
+      cw = cssW; ch = Math.round(cssW * 0.475);
+      canvas.width = cw * ratio; canvas.height = ch * ratio;
+      canvas.style.height = ch + "px";
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      cellW = (cw - padL) / COLS;
+      cellH = (ch - padT) / ROWS;
+    }
+    function draw(upto) {
+      ctx.clearRect(0, 0, cw, ch);
+      ctx.font = '10px "IBM Plex Mono", monospace';
+      ctx.textBaseline = 'middle';
+      for (let r = 0; r < ROWS; r++) {
+        ctx.fillStyle = '#7a6b52';
+        ctx.fillText(AA[r], 4, padT + r * cellH + cellH / 2 + 0.5);
+      }
+      for (let c = 0; c < Math.min(upto, COLS); c++) {
+        for (let r = 0; r < ROWS; r++) {
+          ctx.fillStyle = colour(field(r, c));
+          ctx.fillRect(padL + c * cellW + 0.5, padT + r * cellH + 0.5, cellW - 1, cellH - 1);
+        }
+      }
+      if (upto < COLS) {
+        const x = padL + upto * cellW;
+        ctx.fillStyle = 'rgba(216,138,30,.9)';
+        ctx.fillRect(x - 1, padT, 2, ROWS * cellH);
+      }
+    }
+    function animate() {
+      revealed += 1.15;
+      draw(revealed);
+      if (revealed < COLS) raf = requestAnimationFrame(animate);
+      else draw(COLS);
+    }
+    function start() {
+      layout();
+      if (reduce) { draw(COLS); return; }
+      revealed = 0; cancelAnimationFrame(raf); animate();
+    }
+    canvas.addEventListener('mousemove', e => {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left, y = e.clientY - rect.top;
+      const c = Math.floor((x - padL) / cellW), r = Math.floor((y - padT) / cellH);
+      if (c >= 0 && c < COLS && r >= 0 && r < ROWS) {
+        const v = field(r, c);
+        const label = v > 0.15 ? 'constrained' : (v < -0.15 ? 'tolerated' : 'neutral');
+        tip.textContent = `→${AA[r]} · pos ${c + 1} · ${label}`;
+        tip.style.left = Math.min(x + 12, rect.width - 130) + 'px';
+        tip.style.top = (y - 30) + 'px';
+        tip.style.opacity = 1;
+      } else tip.style.opacity = 0;
+    });
+    canvas.addEventListener('mouseleave', () => tip.style.opacity = 0);
+    let rt;
+    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { layout(); draw(COLS); }, 120); });
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(en => { if (en[0].isIntersecting) { start(); io.disconnect(); } }, { threshold: .25 });
+      io.observe(canvas);
+    } else start();
+  }
+}
+document.addEventListener('DOMContentLoaded', function () { new Component().componentDidMount(); });
+</script>
+</body>
+</html>

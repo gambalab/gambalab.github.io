@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software: ESMRank, DREEP, GFICF, HONEY DeepVariant, sparseDist | Gambardella Lab</title>
+<meta name="description" content="Open-source tools from the Gambardella Lab (TIGEM): protein variant effect prediction, single-cell drug response, scRNA-seq analysis, hybrid variant calling — install and cite.">
+<meta property="og:title" content="Software: ESMRank, DREEP, GFICF, HONEY DeepVariant, sparseDist | Gambardella Lab">
+<meta property="og:description" content="Open-source tools from the Gambardella Lab (TIGEM): protein variant effect prediction, single-cell drug response, scRNA-seq analysis, hybrid variant calling — install and cite.">
+<meta property="og:type" content="website">
+
+<link rel="canonical" href="https://gambalab.github.io/software.html">
+<meta name="author" content="Gennaro Gambardella">
+<meta property="og:url" content="https://gambalab.github.io/software.html">
+<meta property="og:site_name" content="Gambardella Lab">
+<meta property="og:image" content="https://gambalab.github.io/assets/social-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gambardella Lab — a DNA helix forming a tree, half nature, half code.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gambalab.github.io/assets/social-card.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareSourceCode",
+   "name": "ESMRank",
+   "description": "Learning-to-rank prediction of missense variant effects from deep mutational scanning data.",
+   "codeRepository": "https://github.com/gambalab/ESMRank",
+   "programmingLanguage": "Python",
+   "url": "https://gambalab.github.io/software.html#esmrank",
+   "author": {
+    "@id": "https://gambalab.github.io/#gennaro-gambardella"
+   },
+   "publisher": {
+    "@id": "https://gambalab.github.io/#lab"
+   },
+   "citation": {
+    "@type": "ScholarlyArticle",
+    "headline": "ESMRank: learning-to-rank prediction of missense variant effects from deep mutational scanning data",
+    "datePublished": "2026",
+    "isPartOf": {
+     "@type": "Periodical",
+     "name": "Molecular Systems Biology"
+    },
+    "sameAs": "https://doi.org/10.1038/s44320-026-00252-3"
+   }
+  },
+  {
+   "@type": "SoftwareSourceCode",
+   "name": "DREEP",
+   "description": "Drug Response Estimation from single-cell Expression Profiles.",
+   "codeRepository": "https://github.com/gambalab/DREEP",
+   "programmingLanguage": "R",
+   "url": "https://gambalab.github.io/software.html#dreep",
+   "author": {
+    "@id": "https://gambalab.github.io/#gennaro-gambardella"
+   },
+   "publisher": {
+    "@id": "https://gambalab.github.io/#lab"
+   },
+   "citation": {
+    "@type": "ScholarlyArticle",
+    "headline": "Predicting drug response from single-cell expression profiles of tumours",
+    "datePublished": "2023",
+    "isPartOf": {
+     "@type": "Periodical",
+     "name": "BMC Medicine"
+    },
+    "sameAs": "https://doi.org/10.1186/s12916-023-03182-1"
+   }
+  },
+  {
+   "@type": "SoftwareSourceCode",
+   "name": "GFICF",
+   "description": "Gene Frequency - Inverse Cell Frequency normalisation, single-cell GSEA (scGSEA) and reference mapping (scMAP) for scRNA-seq.",
+   "codeRepository": "https://github.com/gambalab/gficf",
+   "programmingLanguage": "R",
+   "url": "https://gambalab.github.io/software.html#gficf",
+   "author": {
+    "@id": "https://gambalab.github.io/#gennaro-gambardella"
+   },
+   "publisher": {
+    "@id": "https://gambalab.github.io/#lab"
+   },
+   "citation": {
+    "@type": "ScholarlyArticle",
+    "headline": "Single-cell gene set enrichment analysis and transfer learning for functional annotation of scRNA-seq data",
+    "datePublished": "2023",
+    "isPartOf": {
+     "@type": "Periodical",
+     "name": "NAR Genomics and Bioinformatics"
+    },
+    "sameAs": "https://doi.org/10.1093/nargab/lqad024"
+   }
+  },
+  {
+   "@type": "SoftwareSourceCode",
+   "name": "HONEY DeepVariant",
+   "description": "Hybrid Oxford Nanopore + Illumina germline variant calling with deep learning.",
+   "codeRepository": "https://github.com/gambalab/honey_DeepVariant",
+   "programmingLanguage": "Docker",
+   "url": "https://gambalab.github.io/software.html#honey",
+   "author": {
+    "@id": "https://gambalab.github.io/#gennaro-gambardella"
+   },
+   "publisher": {
+    "@id": "https://gambalab.github.io/#lab"
+   },
+   "citation": {
+    "@type": "ScholarlyArticle",
+    "headline": "Joint processing of long- and short-read sequencing data with deep learning improves variant calling",
+    "datePublished": "2025",
+    "isPartOf": {
+     "@type": "Periodical",
+     "name": "Cell Reports Methods"
+    },
+    "sameAs": "https://doi.org/10.1016/j.crmeth.2025.101107"
+   }
+  },
+  {
+   "@type": "SoftwareSourceCode",
+   "name": "sparseDist",
+   "description": "Fast distances, nearest-neighbour search and graphs for large, highly sparse data.",
+   "codeRepository": "https://github.com/gambalab/sparseDist",
+   "programmingLanguage": "R",
+   "url": "https://gambalab.github.io/software.html#sparsedist",
+   "author": {
+    "@id": "https://gambalab.github.io/#gennaro-gambardella"
+   },
+   "publisher": {
+    "@id": "https://gambalab.github.io/#lab"
+   }
+  }
+ ]
+}
+</script>
+<meta name="theme-color" content="#141009">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;}
+  section{scroll-margin-top:118px;}
+  ::selection{background:#C2541F;color:#fff;}
+  a.lnk{color:#C2541F;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(194,84,31,.35);}
+  a.lnk:hover{border-bottom-color:#C2541F;}
+  .chip:hover{background:#FFFDF9 !important;border-color:#C2541F !important;}
+  .copy-btn:hover{background:#2A2117 !important;}
+  .copy-btn:focus-visible,.chip:focus-visible,a:focus-visible{outline:2px solid #C2541F;outline-offset:2px;}
+  pre{margin:0;}
+  @media (max-width:880px){
+    .nav-links{display:none !important;}
+    .menu-btn{display:inline-flex !important;}
+    .nav-links.open{display:flex !important;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0 !important;background:#FBF8F2;border-bottom:1px solid #E7DBC8;padding:8px 24px 18px !important;align-items:stretch !important;}
+    .nav-links.open a{padding:13px 0 !important;border-bottom:1px solid #EFE6D6;}
+    .tool-grid{grid-template-columns:1fr !important;gap:26px !important;}
+    .facts{grid-template-columns:1fr 1fr !important;}
+    .wrap{padding:0 20px !important;}
+    .subnav-inner{overflow-x:auto;flex-wrap:nowrap !important;}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;scroll-behavior:auto !important;}}
+</style>
+</head>
+<body>
+<div style="font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.6;color:#241A10;background:#F4ECDC;-webkit-font-smoothing:antialiased;">
+
+<!-- ===================== NAV ===================== -->
+<nav style="position:sticky;top:0;z-index:60;background:rgba(244,236,220,.92);backdrop-filter:saturate(150%) blur(12px);border-bottom:1px solid #E7DBC8;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:64px;position:relative;">
+    <a href="index.html" style="display:flex;align-items:center;gap:11px;text-decoration:none;color:#241A10;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;letter-spacing:-0.01em;">
+      <span aria-hidden="true" style="width:26px;height:26px;border-radius:7px;flex:none;background:linear-gradient(90deg,#C2541F 0 50%,#161009 50% 100%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);"></span>
+      Gambardella Lab
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" style="display:none;background:none;border:1px solid #E7DBC8;border-radius:9px;padding:8px 12px;font-size:14px;color:#241A10;cursor:pointer;font-family:inherit;">Menu</button>
+    <div class="nav-links" id="navLinks" style="display:flex;gap:28px;align-items:center;">
+      <a href="index.html#vision" style="font-size:14.5px;color:#6E5F4B;text-decoration:none;">Vision</a>
+      <a href="index.html#research" style="font-size:14.5px;color:#6E5F4B;text-decoration:none;">Research</a>
+      <a href="software.html" aria-current="page" style="font-size:14.5px;color:#241A10;font-weight:600;text-decoration:none;">Software</a>
+      <a href="index.html#papers" style="font-size:14.5px;color:#6E5F4B;text-decoration:none;">Papers</a>
+      <a href="index.html#people" style="font-size:14.5px;color:#6E5F4B;text-decoration:none;">People</a>
+      <a href="index.html#news" style="font-size:14.5px;color:#6E5F4B;text-decoration:none;">News</a>
+      <a class="cta" href="index.html#join" style="font-size:14.5px;color:#C2541F;font-weight:500;text-decoration:none;border:1px solid #E7DBC8;padding:8px 16px;border-radius:9px;background:#FBF8F2;">Join us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HEADER ===================== -->
+<header style="background:#141009;color:#EFE2CD;padding:76px 0 64px;position:relative;overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(216,138,30,.07) 1px, transparent 0);background-size:26px 26px;pointer-events:none;"></div>
+  <div class="wrap" style="position:relative;max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#D8821E;">Methods &amp; software</div>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.025em;line-height:1.05;font-size:clamp(34px,5vw,56px);margin:14px 0 0;color:#F6ECDC;max-width:20ch;">Open tools, built for real data.</h1>
+    <p style="color:#B7A88E;margin:18px 0 0;font-size:18px;max-width:60ch;">Every method we publish ships as installable, documented code. From protein variant effects to single-cell drug response and hybrid long/short-read sequencing — five tools, one GitHub organisation.</p>
+    <div style="display:flex;gap:22px;margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#A8997F;flex-wrap:wrap;">
+      <span>Python · R · C++ · Docker</span>
+      <a href="https://github.com/gambalab" target="_blank" rel="noopener" style="color:#E89B3A;text-decoration:none;border-bottom:1px solid rgba(232,155,58,.4);">github.com/gambalab →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== SUB-NAV ===================== -->
+<div style="position:sticky;top:64px;z-index:50;background:rgba(251,248,242,.95);backdrop-filter:blur(10px);border-bottom:1px solid #E7DBC8;">
+  <div class="wrap subnav-inner" style="max-width:1180px;margin:0 auto;padding:10px 28px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#6E5F4B;margin-right:6px;white-space:nowrap;">Jump to</span>
+    <a class="chip" href="#esmrank" style="white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#241A10;text-decoration:none;padding:6px 12px;border:1px solid #E7DBC8;border-radius:999px;background:#FBF8F2;">ESMRank</a>
+    <a class="chip" href="#dreep" style="white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#241A10;text-decoration:none;padding:6px 12px;border:1px solid #E7DBC8;border-radius:999px;background:#FBF8F2;">DREEP</a>
+    <a class="chip" href="#gficf" style="white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#241A10;text-decoration:none;padding:6px 12px;border:1px solid #E7DBC8;border-radius:999px;background:#FBF8F2;">GFICF</a>
+    <a class="chip" href="#honey" style="white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#241A10;text-decoration:none;padding:6px 12px;border:1px solid #E7DBC8;border-radius:999px;background:#FBF8F2;">HONEY DeepVariant</a>
+    <a class="chip" href="#sparsedist" style="white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#241A10;text-decoration:none;padding:6px 12px;border:1px solid #E7DBC8;border-radius:999px;background:#FBF8F2;">sparseDist</a>
+  </div>
+</div>
+
+<!-- ===================== 01 ESMRank ===================== -->
+<section id="esmrank" style="background:#F4ECDC;padding:72px 0;border-bottom:1px solid #E7DBC8;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">01 · Protein variant effects</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6E5F4B;border:1px solid #E7DBC8;border-radius:6px;padding:3px 8px;background:#FBF8F2;">Python</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6E5F4B;border:1px solid #E7DBC8;border-radius:6px;padding:3px 8px;background:#FBF8F2;">Mol Syst Biol 2026</span>
+    </div>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;font-size:clamp(30px,4vw,44px);margin:12px 0 4px;">ESMRank</h2>
+    <p style="margin:0;font-size:19px;color:#6E5F4B;max-width:60ch;">Learning-to-rank prediction of missense variant effects from deep mutational scanning data.</p>
+
+    <div class="tool-grid" style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;margin-top:34px;align-items:start;">
+      <div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 6px;">The problem</h3>
+        <p style="margin:0 0 20px;color:#4F4234;font-size:16px;">Deep mutational scans measure thousands of variants per protein, but different assays read out different things on different scales. Partially overlapping datasets are usually treated as noise — so most of that information is never combined.</p>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 6px;">How it works</h3>
+        <p style="margin:0 0 22px;color:#4F4234;font-size:16px;">An overlap-aware rank-fusion score, <em>variant soundness</em>, merges ~1,100 MAVE datasets into a consensus map of mutational tolerance. ESMRank then learns to rank variants on that map from ESM-2 embeddings plus physicochemical descriptors. Under strict protein-level splits it outperforms widely used predictors on abundance, folding and stability benchmarks (ProteinGym, Domainome), and its scores track ClinVar pathogenicity and, in CFTR, folding, channel activity and drug response.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;">
+          <span style="padding:6px 10px;border-radius:8px;background:#FFFDF9;border:1px solid #E7DBC8;">protein sequence / variant table</span>
+          <span aria-hidden="true" style="color:#C2541F;">→</span>
+          <span style="padding:6px 10px;border-radius:8px;background:#FFFDF9;border:1px solid #E7DBC8;">ESM-2 + physicochemical features</span>
+          <span aria-hidden="true" style="color:#C2541F;">→</span>
+          <span style="padding:6px 10px;border-radius:8px;background:#241A10;color:#FBF8F2;">ranked variant scores + profile</span>
+        </div>
+        <div class="facts" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px;">
+          <div style="border-top:2px solid #C2541F;padding-top:10px;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;">~1,100</div><div style="font-size:13.5px;color:#6E5F4B;">MAVE datasets fused</div></div>
+          <div style="border-top:2px solid #C2541F;padding-top:10px;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;">&gt;2M</div><div style="font-size:13.5px;color:#6E5F4B;">missense variants</div></div>
+          <div style="border-top:2px solid #C2541F;padding-top:10px;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;">0</div><div style="font-size:13.5px;color:#6E5F4B;">clinical labels in training</div></div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#1C1610;border:1px solid #332818;border-radius:14px;padding:16px 18px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#A8997F;margin-bottom:8px;">Install &amp; run</div>
+          <pre style="font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.7;color:#F6ECDC;white-space:pre-wrap;word-break:break-word;"><span style="color:#A8997F;"># Python ≥ 3.10, CUDA GPU</span>
+pip install esmrank
+esmrank download-models
+esmrank run --input protein.fasta -sub</pre>
+        </div>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:15px;">
+          <a class="lnk" href="https://doi.org/10.1038/s44320-026-00252-3" target="_blank" rel="noopener">Paper →</a>
+          <a class="lnk" href="https://github.com/gambalab/ESMRank" target="_blank" rel="noopener">GitHub →</a>
+          <a class="lnk" href="https://zenodo.org/records/18773439" target="_blank" rel="noopener">Model weights (Zenodo) →</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;">
+          <a href="https://www.embl.org/about/info/course-and-conference-office/2026/03/best-poster-prize-at-ai-and-biology/" target="_blank" rel="noopener" style="color:#241A10;text-decoration:none;display:flex;gap:8px;align-items:baseline;"><span aria-hidden="true" style="color:#C2541F;">★</span><span>Best poster — EMBO | EMBL Symposium "AI and biology", Heidelberg 2026</span></a>
+          <a href="https://www.youtube.com/watch?v=uYJYTnlMvH8" target="_blank" rel="noopener" style="color:#241A10;text-decoration:none;display:flex;gap:8px;align-items:baseline;"><span aria-hidden="true" style="color:#C2541F;">★</span><span>Best talk — ISCB-UK 2026, Cambridge · <span style="color:#C2541F;font-weight:500;">watch the talk ▶</span></span></a>
+        </div>
+        <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:16px 18px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6E5F4B;">How to cite</span>
+            <button class="copy-btn" data-cite="cite-esmrank" type="button" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#FBF8F2;background:#241A10;border:none;border-radius:7px;padding:5px 10px;cursor:pointer;">Copy</button>
+          </div>
+          <p id="cite-esmrank" style="margin:0;font-size:14px;color:#4F4234;line-height:1.55;">Arnese R, Gambardella G. ESMRank: learning-to-rank prediction of missense variant effects from deep mutational scanning data. <em>Molecular Systems Biology</em> (2026). doi:10.1038/s44320-026-00252-3</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 02 DREEP ===================== -->
+<section id="dreep" style="background:#FBF8F2;padding:72px 0;border-bottom:1px solid #E7DBC8;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">02 · Single-cell drug response</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6E5F4B;border:1px solid #E7DBC8;border-radius:6px;padding:3px 8px;background:#F4ECDC;">R · C++</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6E5F4B;border:1px solid #E7DBC8;border-radius:6px;padding:3px 8px;background:#F4ECDC;">BMC Medicine 2023</span>
+    </div>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;font-size:clamp(30px,4vw,44px);margin:12px 0 4px;">DREEP</h2>
+    <p style="margin:0;font-size:19px;color:#6E5F4B;max-width:60ch;">Drug Response Estimation from single-cell Expression Profiles.</p>
+
+    <div class="tool-grid" style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;margin-top:34px;align-items:start;">
+      <div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 6px;">The problem</h3>
+        <p style="margin:0 0 20px;color:#4F4234;font-size:16px;">Tumours are mixtures of cells that respond differently to the same drug. Bulk drug screens average this away, so resistant sub-populations go unseen until they take over.</p>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 6px;">How it works</h3>
+        <p style="margin:0 0 22px;color:#4F4234;font-size:16px;">DREEP turns large cell-line viability screens (GDSC, CTRP2, PRISM) into ranked gene signatures of drug sensitivity. For each single cell it runs an enrichment test of the cell's most specific genes (gf-icf) against those signatures, predicting which drugs that cell is vulnerable to — and what fraction of a sample is sensitive. Validated in vitro on independent single-cell datasets covering over 200 cancer cell lines.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;">
+          <span style="padding:6px 10px;border-radius:8px;background:#FFFDF9;border:1px solid #E7DBC8;">scRNA-seq counts</span>
+          <span aria-hidden="true" style="color:#C2541F;">→</span>
+          <span style="padding:6px 10px;border-radius:8px;background:#FFFDF9;border:1px solid #E7DBC8;">GSEA vs drug-sensitivity signatures</span>
+          <span aria-hidden="true" style="color:#C2541F;">→</span>
+          <span style="padding:6px 10px;border-radius:8px;background:#241A10;color:#FBF8F2;">per-cell drug vulnerability</span>
+        </div>
+        <div class="facts" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px;">
+          <div style="border-top:2px solid #C2541F;padding-top:10px;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;">&gt;200</div><div style="font-size:13.5px;color:#6E5F4B;">cancer cell lines in validation</div></div>
+          <div style="border-top:2px solid #C2541F;padding-top:10px;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;">3</div><div style="font-size:13.5px;color:#6E5F4B;">drug screens: GDSC · CTRP2 · PRISM</div></div>
+          <div style="border-top:2px solid #C2541F;padding-top:10px;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;">1 cell</div><div style="font-size:13.5px;color:#6E5F4B;">resolution of each prediction</div></div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#1C1610;border:1px solid #332818;border-radius:14px;padding:16px 18px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#A8997F;margin-bottom:8px;">Install &amp; run</div>
+          <pre style="font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.7;color:#F6ECDC;white-space:pre-wrap;word-break:break-word;"><span style="color:#A8997F;"># R — requires gficf (below)</span>
+devtools::install_github("gambalab/DREEP")
+data &lt;- gficf::gficf(M = counts)
+res  &lt;- DREEP::runDREEP(M = data$gficf,
+          gpds.signatures = c("CTRP2","GDSC"))</pre>
+        </div>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:15px;">
+          <a class="lnk" href="https://doi.org/10.1186/s12916-023-03182-1" target="_blank" rel="noopener">Paper →</a>
+          <a class="lnk" href="https://github.com/gambalab/DREEP" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+        <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:16px 18px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6E5F4B;">How to cite</span>
+            <button class="copy-btn" data-cite="cite-dreep" type="button" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#FBF8F2;background:#241A10;border:none;border-radius:7px;padding:5px 10px;cursor:pointer;">Copy</button>
+          </div>
+          <p id="cite-dreep" style="margin:0;font-size:14px;color:#4F4234;line-height:1.55;">Pellecchia S, Viscido G, Franchini M, Gambardella G. Predicting drug response from single-cell expression profiles of tumours. <em>BMC Medicine</em> 21, 476 (2023). doi:10.1186/s12916-023-03182-1</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 03 GFICF ===================== -->
+<section id="gficf" style="background:#F4ECDC;padding:72px 0;border-bottom:1px solid #E7DBC8;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">03 · Single-cell analysis</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6E5F4B;border:1px solid #E7DBC8;border-radius:6px;padding:3px 8px;background:#FBF8F2;">R · C++</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6E5F4B;border:1px solid #E7DBC8;border-radius:6px;padding:3px 8px;background:#FBF8F2;">NAR Genom Bioinform 2023</span>
+    </div>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;font-size:clamp(30px,4vw,44px);margin:12px 0 4px;">GFICF</h2>
+    <p style="margin:0;font-size:19px;color:#6E5F4B;max-width:60ch;">Gene Frequency – Inverse Cell Frequency: text-mining normalisation, pathway activity and reference mapping for single-cell data.</p>
+
+    <div class="tool-grid" style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;margin-top:34px;align-items:start;">
+      <div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 6px;">The problem</h3>
+        <p style="margin:0 0 20px;color:#4F4234;font-size:16px;">Single-cell counts are sparse and noisy, so per-gene signals are hard to read. Two questions come up again and again: which pathways is each cell using, and how do new cells map onto a known reference atlas?</p>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 6px;">How it works</h3>
+        <p style="margin:0 0 22px;color:#4F4234;font-size:16px;">GFICF treats each cell like a document and each gene like a word, weighting genes the way search engines weight terms (TF-IDF). Version 2 adds <strong>scGSEA</strong>, which scores pathway activity in every cell via non-negative matrix factorisation and enrichment analysis, and <strong>scMAP</strong>, which projects new cells onto a reference atlas and transfers its labels. Clustering (Phenograph/Louvain), PCA/NMF and UMAP/t-SNE are built in.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;">
+          <span style="padding:6px 10px;border-radius:8px;background:#FFFDF9;border:1px solid #E7DBC8;">raw UMI counts</span>
+          <span aria-hidden="true" style="color:#C2541F;">→</span>
+          <span style="padding:6px 10px;border-radius:8px;background:#FFFDF9;border:1px solid #E7DBC8;">gf-icf · NMF / PCA · UMAP</span>
+          <span aria-hidden="true" style="color:#C2541F;">→</span>
+          <span style="padding:6px 10px;border-radius:8px;background:#241A10;color:#FBF8F2;">clusters · pathway scores · mapped labels</span>
+        </div>
+        <p style="margin:22px 0 0;font-size:14px;color:#6E5F4B;">GFICF is also the normalisation layer underneath DREEP.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#1C1610;border:1px solid #332818;border-radius:14px;padding:16px 18px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#A8997F;margin-bottom:8px;">Install &amp; run</div>
+          <pre style="font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.7;color:#F6ECDC;white-space:pre-wrap;word-break:break-word;"><span style="color:#A8997F;"># R — see the install guide for system deps</span>
+devtools::install_github("gambalab/gficf")
+data &lt;- gficf::gficf(M = counts)
+data &lt;- gficf::runScGSEA(data, geneID = "symbol",
+          species = "human", category = "H")</pre>
+        </div>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:15px;">
+          <a class="lnk" href="https://doi.org/10.1093/nargab/lqad024" target="_blank" rel="noopener">Paper (v2) →</a>
+          <a class="lnk" href="https://doi.org/10.3389/fgene.2019.00734" target="_blank" rel="noopener">Paper (v1) →</a>
+          <a class="lnk" href="https://github.com/gambalab/gficf" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+        <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:16px 18px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6E5F4B;">How to cite</span>
+            <button class="copy-btn" data-cite="cite-gficf" type="button" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#FBF8F2;background:#241A10;border:none;border-radius:7px;padding:5px 10px;cursor:pointer;">Copy</button>
+          </div>
+          <p id="cite-gficf" style="margin:0;font-size:14px;color:#4F4234;line-height:1.55;">Franchini M, Pellecchia S, Viscido G, Gambardella G. Single-cell gene set enrichment analysis and transfer learning for functional annotation of scRNA-seq data. <em>NAR Genomics and Bioinformatics</em> 5(1), lqad024 (2023). doi:10.1093/nargab/lqad024</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04 HONEY DeepVariant ===================== -->
+<section id="honey" style="background:#FBF8F2;padding:72px 0;border-bottom:1px solid #E7DBC8;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C2541F;font-weight:500;">04 · Genome variant calling</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6E5F4B;border:1px solid #E7DBC8;border-radius:6px;padding:3px 8px;background:#F4ECDC;">Docker · Singularity</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6E5F4B;border:1px solid #E7DBC8;border-radius:6px;padding:3px 8px;background:#F4ECDC;">Cell Rep Methods 2025</span>
+    </div>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;font-size:clamp(30px,4vw,44px);margin:12px 0 4px;">HONEY DeepVariant</h2>
+    <p style="margin:0;font-size:19px;color:#6E5F4B;max-width:60ch;">Hybrid Oxford Nanopore + Illumina variant calling with deep learning.</p>
+
+    <div class="tool-grid" style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;margin-top:34px;align-items:start;">
+      <div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 6px;">The problem</h3>
+        <p style="margin:0 0 20px;color:#4F4234;font-size:16px;">Short reads are accurate but miss hard-to-map regions; long reads reach them but carry more errors. Calling each platform separately and merging the results afterwards leaves accuracy on the table — and sequencing both deeply is expensive.</p>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 6px;">How it works</h3>
+        <p style="margin:0 0 22px;color:#4F4234;font-size:16px;">HONEY DeepVariant is a DeepVariant model trained to read Nanopore and Illumina reads <em>jointly</em>, in a single pileup. Two models (R9.4.1 and R10.4.1 chemistry) were trained on over 100 TB of harmonised Nanopore data from the seven Genome in a Bottle individuals. Even a shallow hybrid — about 15× of each platform — reaches SNV F1 0.998, beating single-platform callers. Companion <strong>honey_pipes</strong> containers handle basecalling, alignment and SV calling.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;">
+          <span style="padding:6px 10px;border-radius:8px;background:#FFFDF9;border:1px solid #E7DBC8;">ONT + Illumina reads</span>
+          <span aria-hidden="true" style="color:#C2541F;">→</span>
+          <span style="padding:6px 10px;border-radius:8px;background:#FFFDF9;border:1px solid #E7DBC8;">merged BAM · hybrid CNN</span>
+          <span aria-hidden="true" style="color:#C2541F;">→</span>
+          <span style="padding:6px 10px;border-radius:8px;background:#241A10;color:#FBF8F2;">VCF / gVCF</span>
+        </div>
+        <div class="facts" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px;">
+          <div style="border-top:2px solid #C2541F;padding-top:10px;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;">&gt;100 TB</div><div style="font-size:13.5px;color:#6E5F4B;">Nanopore data harmonised</div></div>
+          <div style="border-top:2px solid #C2541F;padding-top:10px;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;">15× + 15×</div><div style="font-size:13.5px;color:#6E5F4B;">shallow hybrid coverage</div></div>
+          <div style="border-top:2px solid #C2541F;padding-top:10px;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;">0.998</div><div style="font-size:13.5px;color:#6E5F4B;">SNV F1 at that depth</div></div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#1C1610;border:1px solid #332818;border-radius:14px;padding:16px 18px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#A8997F;margin-bottom:8px;">Install &amp; run</div>
+          <pre style="font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.7;color:#F6ECDC;white-space:pre-wrap;word-break:break-word;"><span style="color:#A8997F;"># GRCh38 only, chr-prefixed contigs</span>
+singularity pull docker://gambalab/honey_deepvariant:1.6.1
+singularity exec honey_deepvariant_1.6.1.sif \
+  run_honey_deepvariant.sh -m HYBRID_ONT_R104_ILLUMINA \
+  -b hybrid.bam -r GRCh38.fa -s SAMPLE -x F -t 32 -o out/</pre>
+        </div>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:15px;">
+          <a class="lnk" href="https://doi.org/10.1016/j.crmeth.2025.101107" target="_blank" rel="noopener">Paper →</a>
+          <a class="lnk" href="https://github.com/gambalab/honey_DeepVariant" target="_blank" rel="noopener">GitHub →</a>
+          <a class="lnk" href="https://github.com/gambalab/honey_pipes" target="_blank" rel="noopener">honey_pipes →</a>
+        </div>
+        <div style="background:#FFFDF9;border:1px solid #E7DBC8;border-radius:14px;padding:16px 18px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6E5F4B;">How to cite</span>
+            <button class="copy-btn" data-cite="cite-honey" type="button" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#FBF8F2;background:#241A10;border:none;border-radius:7px;padding:5px 10px;cursor:pointer;">Copy</button>
+          </div>
+          <p id="cite-honey" style="margin:0;font-size:14px;color:#4F4234;line-height:1.55;">Gambardella G. Joint processing of long- and short-read sequencing data with deep learning improves variant calling. <em>Cell Reports Methods</em> 5(7), 101107 (2025). doi:10.1016/j.crmeth.2025.101107</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 05 sparseDist ===================== -->
+<section id="sparsedist" style="background:#141009;color:#EFE2CD;padding:72px 0;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E89B3A;font-weight:500;">05 · Scalable computation</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#A8997F;border:1px solid #332818;border-radius:6px;padding:3px 8px;">R · C++ · OpenMP</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#1A1209;background:#E89B3A;border-radius:6px;padding:3px 8px;font-weight:600;">New · manuscript in preparation</span>
+    </div>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;font-size:clamp(30px,4vw,44px);margin:12px 0 4px;color:#F6ECDC;">sparseDist</h2>
+    <p style="margin:0;font-size:19px;color:#B7A88E;max-width:60ch;">Fast distances, nearest-neighbour search and graphs for large, highly sparse data.</p>
+
+    <div class="tool-grid" style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;margin-top:34px;align-items:start;">
+      <div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 6px;color:#F6ECDC;">The problem</h3>
+        <p style="margin:0 0 20px;color:#C9BBA1;font-size:16px;">Single-cell atlases, embeddings and other sparse matrices can have millions of columns. A full pairwise distance matrix grows with the square of that number and quickly stops fitting in memory — yet clustering only needs each point's nearest neighbours.</p>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 6px;color:#F6ECDC;">How it works</h3>
+        <p style="margin:0 0 22px;color:#C9BBA1;font-size:16px;">Parallel C++ kernels (RcppArmadillo + OpenMP) that walk only the stored non-zero entries, so cost follows sparsity rather than matrix size. <code style="font-family:'IBM Plex Mono',monospace;color:#E89B3A;">sparseKNN()</code> searches in blocks and never builds the full matrix; <code style="font-family:'IBM Plex Mono',monospace;color:#E89B3A;">sparseSNN()</code> turns the neighbourhoods into a shared-nearest-neighbour graph ready for community detection. Jaccard, cosine, Euclidean, Manhattan, Pearson, Jensen–Shannon and covariance are supported, with reproducible results regardless of thread count.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;">
+          <span style="padding:6px 10px;border-radius:8px;background:#1C1610;border:1px solid #332818;color:#EFE2CD;">sparse matrix (dgCMatrix)</span>
+          <span aria-hidden="true" style="color:#E89B3A;">→</span>
+          <span style="padding:6px 10px;border-radius:8px;background:#1C1610;border:1px solid #332818;color:#EFE2CD;">blocked kNN</span>
+          <span aria-hidden="true" style="color:#E89B3A;">→</span>
+          <span style="padding:6px 10px;border-radius:8px;background:#E89B3A;color:#1A1209;">SNN graph → clusters</span>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#1C1610;border:1px solid #4A3A1E;border-radius:14px;padding:16px 18px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#A8997F;margin-bottom:8px;">Install &amp; run</div>
+          <pre style="font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.7;color:#F6ECDC;white-space:pre-wrap;word-break:break-word;"><span style="color:#A8997F;"># R ≥ 4.0 — CRAN release coming</span>
+remotes::install_github("gambalab/sparseDist")
+nn  &lt;- sparseKNN(X, k = 15, method = "cosine")
+snn &lt;- sparseSNN(nn, prune = 1/15)</pre>
+        </div>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:15px;">
+          <a href="https://github.com/gambalab/sparseDist" target="_blank" rel="noopener" style="color:#E89B3A;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(232,155,58,.4);">GitHub →</a>
+          <span style="color:#A8997F;font-size:14px;">Paper: in preparation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OTHER REPOS ===================== -->
+<section id="more" style="background:#F4ECDC;padding:64px 0;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C2541F;">More on GitHub</div>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.02em;font-size:clamp(24px,3vw,32px);margin:10px 0 22px;">Pipelines and reproducible analyses.</h2>
+    <div style="display:flex;flex-direction:column;">
+      <a href="https://github.com/gambalab/honey_pipes" target="_blank" rel="noopener" style="display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) auto;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid #E7DBC8;text-decoration:none;color:#241A10;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14.5px;">honey_pipes</span><span style="color:#6E5F4B;font-size:15px;">Containerised ONT &amp; Illumina basecalling, alignment and SV-calling pipelines.</span><span aria-hidden="true" style="color:#C2541F;">→</span></a>
+      <a href="https://github.com/gambalab/dropseq" target="_blank" rel="noopener" style="display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) auto;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid #E7DBC8;text-decoration:none;color:#241A10;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14.5px;">dropseq</span><span style="color:#6E5F4B;font-size:15px;">Pipeline to process Drop-seq single-cell sequencing data.</span><span aria-hidden="true" style="color:#C2541F;">→</span></a>
+      <a href="https://github.com/gambalab/scGSA_scMAP_manuscript" target="_blank" rel="noopener" style="display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) auto;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid #E7DBC8;text-decoration:none;color:#241A10;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14.5px;">scGSA_scMAP_manuscript</span><span style="color:#6E5F4B;font-size:15px;">Scripts to reproduce the GFICF v2 (scGSEA / scMAP) results.</span><span aria-hidden="true" style="color:#C2541F;">→</span></a>
+      <a href="https://github.com/gambalab" target="_blank" rel="noopener" style="display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) auto;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid #E7DBC8;border-bottom:1px solid #E7DBC8;text-decoration:none;color:#241A10;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14.5px;">all repositories</span><span style="color:#6E5F4B;font-size:15px;">The full gambalab organisation on GitHub.</span><span aria-hidden="true" style="color:#C2541F;">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer style="background:#141009;color:#A8997F;padding:34px 0 44px;font-size:13.5px;">
+  <div class="wrap" style="max-width:1180px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center;">
+    <span style="display:flex;align-items:center;gap:10px;"><span aria-hidden="true" style="width:18px;height:18px;border-radius:5px;background:linear-gradient(90deg,#C2541F 0 50%,#0c0905 50% 100%);"></span>© <span id="yr"></span> Gambardella Lab — TIGEM &amp; Scuola Superiore Meridionale, Naples.</span>
+    <a href="index.html" style="font-family:'IBM Plex Mono',monospace;color:#A8997F;text-decoration:none;">← Back to home</a>
+  </div>
+</footer>
+
+</div>
+<script>
+class DCLogic {}
+class Component extends DCLogic {
+  componentDidMount() {
+    const yr = document.getElementById('yr');
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    const mb = document.getElementById('menuBtn');
+    const nl = document.getElementById('navLinks');
+    if (mb && nl) {
+      mb.addEventListener('click', () => nl.classList.toggle('open'));
+      nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nl.classList.remove('open')));
+    }
+
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const el = document.getElementById(btn.getAttribute('data-cite'));
+        if (!el) return;
+        const text = el.textContent.trim();
+        const done = () => { const o = btn.textContent; btn.textContent = 'Copied'; setTimeout(() => { btn.textContent = o; }, 1400); };
+        const fallback = () => {
+          const r = document.createRange(); r.selectNodeContents(el);
+          const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+          try { document.execCommand('copy'); done(); } catch (e) { btn.textContent = 'Selected'; }
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
+        else fallback();
+      });
+    });
+  }
+}
+document.addEventListener('DOMContentLoaded', function () { new Component().componentDidMount(); });
+</script>
+</body>
+</html>
