@@ -269,6 +269,7 @@ esmrank run --input protein.fasta -sub</pre>
             <button class="copy-btn" data-cite="cite-esmrank" type="button" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#FBF8F2;background:#241A10;border:none;border-radius:7px;padding:5px 10px;cursor:pointer;">Copy</button>
           </div>
           <p id="cite-esmrank" style="margin:0;font-size:14px;color:#4F4234;line-height:1.55;">Arnese R, Gambardella G. ESMRank: learning-to-rank prediction of missense variant effects from deep mutational scanning data. <em>Molecular Systems Biology</em> (2026). doi:10.1038/s44320-026-00252-3</p>
+          <div class="metrics" style="display:flex;gap:14px;align-items:center;margin-top:12px;"><div class="altmetric-embed" data-badge-type="donut" data-badge-popover="left" data-hide-no-mentions="true" data-doi="10.1038/s44320-026-00252-3"></div><span class="__dimensions_badge_embed__" data-doi="10.1038/s44320-026-00252-3" data-style="small_circle" data-legend="hover-left" data-hide-zero-citations="true"></span></div>
         </div>
       </div>
     </div>
@@ -325,6 +326,7 @@ res  &lt;- DREEP::runDREEP(M = data$gficf,
             <button class="copy-btn" data-cite="cite-dreep" type="button" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#FBF8F2;background:#241A10;border:none;border-radius:7px;padding:5px 10px;cursor:pointer;">Copy</button>
           </div>
           <p id="cite-dreep" style="margin:0;font-size:14px;color:#4F4234;line-height:1.55;">Pellecchia S, Viscido G, Franchini M, Gambardella G. Predicting drug response from single-cell expression profiles of tumours. <em>BMC Medicine</em> 21, 476 (2023). doi:10.1186/s12916-023-03182-1</p>
+          <div class="metrics" style="display:flex;gap:14px;align-items:center;margin-top:12px;"><div class="altmetric-embed" data-badge-type="donut" data-badge-popover="left" data-hide-no-mentions="true" data-doi="10.1186/s12916-023-03182-1"></div><span class="__dimensions_badge_embed__" data-doi="10.1186/s12916-023-03182-1" data-style="small_circle" data-legend="hover-left" data-hide-zero-citations="true"></span></div>
         </div>
       </div>
     </div>
@@ -378,6 +380,7 @@ data &lt;- gficf::runScGSEA(data, geneID = "symbol",
             <button class="copy-btn" data-cite="cite-gficf" type="button" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#FBF8F2;background:#241A10;border:none;border-radius:7px;padding:5px 10px;cursor:pointer;">Copy</button>
           </div>
           <p id="cite-gficf" style="margin:0;font-size:14px;color:#4F4234;line-height:1.55;">Franchini M, Pellecchia S, Viscido G, Gambardella G. Single-cell gene set enrichment analysis and transfer learning for functional annotation of scRNA-seq data. <em>NAR Genomics and Bioinformatics</em> 5(1), lqad024 (2023). doi:10.1093/nargab/lqad024</p>
+          <div class="metrics" style="display:flex;gap:14px;align-items:center;margin-top:12px;"><div class="altmetric-embed" data-badge-type="donut" data-badge-popover="left" data-hide-no-mentions="true" data-doi="10.1093/nargab/lqad024"></div><span class="__dimensions_badge_embed__" data-doi="10.1093/nargab/lqad024" data-style="small_circle" data-legend="hover-left" data-hide-zero-citations="true"></span></div>
         </div>
       </div>
     </div>
@@ -435,6 +438,7 @@ singularity exec honey_deepvariant_1.6.1.sif \
             <button class="copy-btn" data-cite="cite-honey" type="button" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#FBF8F2;background:#241A10;border:none;border-radius:7px;padding:5px 10px;cursor:pointer;">Copy</button>
           </div>
           <p id="cite-honey" style="margin:0;font-size:14px;color:#4F4234;line-height:1.55;">Gambardella G. Joint processing of long- and short-read sequencing data with deep learning improves variant calling. <em>Cell Reports Methods</em> 5(7), 101107 (2025). doi:10.1016/j.crmeth.2025.101107</p>
+          <div class="metrics" style="display:flex;gap:14px;align-items:center;margin-top:12px;"><div class="altmetric-embed" data-badge-type="donut" data-badge-popover="left" data-hide-no-mentions="true" data-doi="10.1016/j.crmeth.2025.101107"></div><span class="__dimensions_badge_embed__" data-doi="10.1016/j.crmeth.2025.101107" data-style="small_circle" data-legend="hover-left" data-hide-zero-citations="true"></span></div>
         </div>
       </div>
     </div>
@@ -513,6 +517,18 @@ class Component extends DCLogic {
   componentDidMount() {
     const yr = document.getElementById('yr');
     if (yr) yr.textContent = new Date().getFullYear();
+
+    // Altmetric + Dimensions badges: load each script once, then (re)scan the page
+    const loadBadge = (src, init) => {
+      const run = () => { try { init(); } catch (e) {} };
+      const existing = document.querySelector('script[src="' + src + '"]');
+      if (existing) { run(); return; }
+      const sc = document.createElement('script');
+      sc.src = src; sc.async = true; sc.charset = 'utf-8'; sc.onload = run;
+      document.head.appendChild(sc);
+    };
+    loadBadge('https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js', () => { if (window._altmetric_embed_init) window._altmetric_embed_init(); });
+    loadBadge('https://badge.dimensions.ai/badge.js', () => { if (window.__dimensions_embed && window.__dimensions_embed.addBadges) window.__dimensions_embed.addBadges(); });
 
     const mb = document.getElementById('menuBtn');
     const nl = document.getElementById('navLinks');
